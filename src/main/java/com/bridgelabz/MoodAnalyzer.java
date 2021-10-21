@@ -11,4 +11,5 @@ public class MoodAnalyzer {
 		else
 			return "HAPPY";
 	}
+
 }
