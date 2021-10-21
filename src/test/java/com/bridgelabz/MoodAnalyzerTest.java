@@ -15,4 +15,11 @@ public class MoodAnalyzerTest {
 
 	}
 
+	@Test
+	public void given_AnyMood_Should_Return_HAPPY() {
+		MoodAnalyzer moodAnalyser = new MoodAnalyzer();
+		String mood = moodAnalyser.MoodAnalyzerr("I am in Any Mood");
+		Assert.assertEquals("HAPPY", mood);
+	}
+
 }
