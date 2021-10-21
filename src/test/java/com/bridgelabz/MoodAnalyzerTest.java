@@ -3,18 +3,20 @@ package com.bridgelabz;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bridgelabz.MoodAnalyzer;
-
 public class MoodAnalyzerTest {
 
 	@Test
-	public void given_NullMood_Should_Throw_MoodAnalysisException() {
+	public void givenMessage_SadMood_Should_Return_Sad() {
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am In a Sad Mood");
+		String mood = moodAnalyzer.analyseMood();
+		// Asserting The Result As Boolean Type True Or False
+		Assert.assertEquals("SAD", mood);
+	}
+
+	@Test
+	public void givenMessage_AnyMood_Should_Return_HAPPY() {
 		MoodAnalyzer moodAnalyser = new MoodAnalyzer(null);
-		String mood;
-		try {
-			mood = moodAnalyser.analyseMood();
-		} catch (MoodAnalysisException e) {
-			Assert.assertEquals(MoodAnalysisException.Exception_Type.NULL, e.type);
-		}
+		String mood = moodAnalyser.analyseMood();
+		Assert.assertEquals("HAPPY", mood);
 	}
 }
